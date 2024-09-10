@@ -88,9 +88,8 @@
 
     <div id="home" class="container">
         <h2>Welcome to Vadimus 3D Druckus</h2>
-        <p>Employee Discount: -40%</p>
-        <p>Vadimus 3D Druckus+ (9.99€ pro week): -30%</p>
-        
+        <p>Employee: 40%</p>
+        <p>Vadimus 3D Druckus+ : 30%</p>
     </div>
 
     <div id="pricing" class="container">
@@ -114,6 +113,9 @@
                     <option value="2">Moderate</option>
                     <option value="3">Complex</option>
                 </select>
+
+                <label for="discount">Discount (%):</label> <!-- Added Discount Field -->
+                <input type="number" id="discount" name="discount" placeholder="Enter discount percentage (if any)">
 
                 <button type="button" onclick="calculatePrice()">Get Price Estimate</button>
             </form>
@@ -151,6 +153,7 @@
             const weight = document.getElementById('weight').value;
             const material = document.getElementById('material').value;
             const complexity = document.getElementById('complexity').value;
+            const discount = document.getElementById('discount').value || 0; // Default discount to 0 if not provided
 
             let pricePerGram = 0;
             switch (material) {
@@ -178,7 +181,11 @@
                 price += 10; // High complexity
             }
 
-            document.getElementById('priceOutput').innerText = 'Estimated Price: €' + price.toFixed(2);
+            // Apply discount
+            const discountValue = (price * discount) / 100;
+            price = price - discountValue;
+
+            document.getElementById('priceOutput').innerText = 'Estimated Price: $' + price.toFixed(2);
         }
     </script>
 </body>
