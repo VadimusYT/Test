@@ -117,7 +117,7 @@
 
                 <button type="button" onclick="calculatePrice()">Get Price Estimate</button>
             </form>
-            <p id="priceOutput">€</p>
+            <p id="priceOutput"></p>
         </div>
     </div>
 
@@ -178,7 +178,7 @@
                 price += 10; // High complexity
             }
 
-            document.getElementById('priceOutput').innerText = 'Estimated Price: ' + price.toFixed(2);
+            document.getElementById('priceOutput').innerText = 'Estimated Price: €' + price.toFixed(2);
         }
     </script>
 </body>
