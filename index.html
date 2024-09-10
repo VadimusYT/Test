@@ -94,10 +94,10 @@
 
                 <label for="material">Select Material:</label>
                 <select id="material" name="material" required>
-                    <option value="PLA">PLA - $0.10/gram</option>
-                    <option value="ABS">ABS - $0.15/gram</option>
-                    <option value="PETG">PETG - $0.12/gram</option>
-                    <option value="TPU">TPU - $0.20/gram</option> <!-- Added TPU -->
+                    <option value="PLA">PLA - 0.10€/gram</option>
+                    <option value="ABS">ABS - 0.15€/gram</option>
+                    <option value="PETG">PETG - 0.12€/gram</option>
+                    <option value="TPU">TPU - 0.20€/gram</option> <!-- Added TPU -->
                 </select>
 
                 <label for="complexity">Complexity Level:</label>
@@ -153,7 +153,7 @@
             const discountValue = (price * discount) / 100;
             price = price - discountValue;
 
-            document.getElementById('priceOutput').innerText = 'Estimated Price: $' + price.toFixed(2);
+            document.getElementById('priceOutput').innerText = 'Estimated Price: €' + price.toFixed(2);
         }
     </script>
 </body>
